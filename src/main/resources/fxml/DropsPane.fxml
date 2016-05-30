@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<fx:root prefHeight="527.0" prefWidth="856.0" type="AnchorPane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ListView fx:id="monsterList" prefHeight="498.0" prefWidth="200.0" />
+      <Button fx:id="btnPull" layoutX="628.0" layoutY="53.0" mnemonicParsing="false" onAction="#pullChanges" prefHeight="25.0" prefWidth="60.0" text="Pull" />
+      <TextField fx:id="txtDbName" layoutX="698.0" layoutY="17.0" promptText="Definitions" />
+      <TextField fx:id="txtColName" layoutX="698.0" layoutY="60.0" promptText="npc-drops" />
+      <Button fx:id="btnPush" layoutX="628.0" layoutY="23.0" mnemonicParsing="false" onAction="#pushChanges" prefHeight="25.0" prefWidth="60.0" text="Push" />
+      <Text layoutX="710.0" layoutY="14.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Database name" />
+      <Text layoutX="711.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Collection name" />
+      <Separator layoutX="200.0" layoutY="90.0" prefHeight="7.0" prefWidth="656.0" />
+      <Label layoutX="226.0" layoutY="59.0" text="Monster name:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblMonsterName" layoutX="349.0" layoutY="59.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <ListView fx:id="dropList" layoutX="205.0" layoutY="97.0" prefHeight="401.0" prefWidth="200.0" />
+      <Text layoutX="435.0" layoutY="293.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Amount" wrappingWidth="68.234375">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Text>
+      <TextField fx:id="txtAmount" disable="true" layoutX="604.0" layoutY="275.0" />
+      <Text layoutX="435.0" layoutY="331.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rarity" wrappingWidth="68.234375">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Text>
+      <ChoiceBox fx:id="choiceRarity" disable="true" layoutX="604.0" layoutY="313.0" prefHeight="25.0" prefWidth="149.0" />
+      <TextField fx:id="txtItemId" disable="true" editable="false" layoutX="604.0" layoutY="237.0" />
+      <Text layoutX="435.0" layoutY="255.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Item ID" wrappingWidth="68.234375">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Text>
+      <Text layoutX="435.0" layoutY="216.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" wrappingWidth="68.234375">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Text>
+      <TextField fx:id="txtName" disable="true" editable="false" layoutX="604.0" layoutY="198.0" />
+      <Button fx:id="btnReload" disable="true" layoutX="618.0" layoutY="383.0" mnemonicParsing="false" onAction="#reload" prefHeight="25.0" prefWidth="100.0" text="Reload" />
+      <Button fx:id="btnSaveChanges" disable="true" layoutX="491.0" layoutY="383.0" mnemonicParsing="false" onAction="#saveChanges" prefHeight="25.0" prefWidth="100.0" text="Save changes" />
+      <Button fx:id="btnAddDrop" layoutX="205.0" layoutY="500.0" mnemonicParsing="false" onAction="#addDrop" prefHeight="25.0" prefWidth="100.0" text="Add drop" />
+      <Button fx:id="btnDeleteDrop" layoutX="305.0" layoutY="500.0" mnemonicParsing="false" onAction="#deleteDrop" prefHeight="25.0" prefWidth="100.0" text="Delete drop" />
+      <Button fx:id="btnDeleteMonster" layoutX="100.0" layoutY="500.0" mnemonicParsing="false" onAction="#deleteMonster" prefHeight="25.0" prefWidth="100.0" text="Delete monster" />
+      <Button fx:id="btnAddMonster" layoutY="500.0" mnemonicParsing="false" onAction="#addMonster" prefHeight="25.0" prefWidth="100.0" text="Add monster" />
+      <Separator layoutX="405.0" layoutY="179.0" prefHeight="7.0" prefWidth="451.0" />
+      <TextField fx:id="txtMonsterName" disable="true" layoutX="604.0" layoutY="121.0" />
+      <Text layoutX="435.0" layoutY="139.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Monster name" wrappingWidth="120.0">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Text>
+   </children>
+</fx:root>

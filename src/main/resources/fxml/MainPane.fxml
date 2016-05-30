@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="560.0" prefWidth="856.0" tabClosingPolicy="UNAVAILABLE" type="TabPane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+  <tabs>
+      <Tab fx:id="settingsTab" text="Settings">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+      </content>
+      </Tab>
+    <Tab fx:id="itemDefinitionsTab" text="Item Definitions">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+      </content>
+    </Tab>
+      <Tab fx:id="npcDefinitionsTab" text="Npc Definitions">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+        </content>
+      </Tab>
+      <Tab fx:id="dropsTab" text="Drops">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+        </content>
+      </Tab>
+  </tabs>
+</fx:root>
