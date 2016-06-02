@@ -1,35 +1,20 @@
 package domain.controllers;
 
 import domain.item.ItemDefinition;
-import javafx.beans.property.SimpleObjectProperty;
 
-import java.util.*;
+import java.util.Optional;
 
 /**
  * Created by Gilles on 30/05/2016.
  */
-public class ItemDefinitionsController {
-    private final Map<Integer, ItemDefinition> itemDefinitions = new HashMap<>();
-    private final SimpleObjectProperty<ItemDefinition> selectedItemDefinition = new SimpleObjectProperty<>();
-    private final Set<Integer> changedDefinitions = new HashSet<>();
-
-    public Map<Integer, ItemDefinition> getItemDefinitions() {
-        return itemDefinitions;
+public class ItemDefinitionsController extends DefinitionsController<Integer, ItemDefinition> {
+    @Override
+    protected Integer getKeyForDefinition(ItemDefinition definition) {
+        return definition.getId();
     }
 
-    public ItemDefinition getSelectedItemDefinition() {
-        return selectedItemDefinition.get();
-    }
-
-    public void setSelectedItemDefinition(ItemDefinition selectedItemDefinition) {
-        this.selectedItemDefinition.set(selectedItemDefinition);
-    }
-
-    public SimpleObjectProperty<ItemDefinition> selectedItemDefinitionProperty() {
-        return selectedItemDefinition;
-    }
-
-    public void addChangedDefinition(int itemId) {
-        changedDefinitions.add(itemId);
+    @Override
+    public Optional<ItemDefinition> getDefinitionForKey(Integer searchKey) {
+        return getDefinitions().parallelStream().filter(itemDefinition -> itemDefinition.getId() == searchKey).findFirst();
     }
 }

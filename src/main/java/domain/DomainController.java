@@ -2,7 +2,7 @@ package domain;
 
 import domain.controllers.DropsController;
 import domain.controllers.ItemDefinitionsController;
-import domain.definition.NpcDefinition;
+import domain.controllers.NpcDefinitionsController;
 import exceptions.InvalidCollectionException;
 import exceptions.InvalidDatabaseException;
 import exceptions.NoClientException;
@@ -10,8 +10,6 @@ import exceptions.NoConnectionException;
 import mongo.MongoConnection;
 import mongo.OnlineMongoConnection;
 
-import java.util.HashMap;
-import java.util.Map;
 import java.util.logging.Logger;
 
 /**
@@ -21,7 +19,7 @@ public final class DomainController {
     private static final Logger LOGGER = Logger.getLogger("DropChecker");
     private final ItemDefinitionsController itemDefinitionsController = new ItemDefinitionsController();
     private final DropsController dropsController = new DropsController();
-    private final Map<Integer, NpcDefinition> npcDefinitions = new HashMap<>();
+    private final NpcDefinitionsController npcDefinitionsController = new NpcDefinitionsController();
     private MongoConnection mongoConnection;
 
     public Logger getLogger() {
@@ -42,23 +40,23 @@ public final class DomainController {
     public void loadNpcDefinitions(String databaseName, String collectionName) throws NoConnectionException, InvalidDatabaseException, InvalidCollectionException, NoClientException {
         if(mongoConnection == null)
             throw new NoConnectionException();
-        mongoConnection.loadNpcDefinitions(databaseName, collectionName).parallelStream().forEach(npcDefinition -> npcDefinitions.put(npcDefinition.getId(), npcDefinition));
+        mongoConnection.loadNpcDefinitions(databaseName, collectionName).forEach(npcDefinition -> getNpcDefinitionsController().addDefinition(npcDefinition, false));
     }
 
     public void loadItemDefinitions(String databaseName, String collectionName) throws NoConnectionException, InvalidDatabaseException, InvalidCollectionException, NoClientException {
         if(mongoConnection == null)
             throw new NoConnectionException();
-        mongoConnection.loadItemDefinitions(databaseName, collectionName).parallelStream().forEach(itemDefinition -> getItemDefinitionsController().getItemDefinitions().put(itemDefinition.getId(), itemDefinition));
+        mongoConnection.loadItemDefinitions(databaseName, collectionName).forEach(itemDefinition -> getItemDefinitionsController().addDefinition(itemDefinition, false));
     }
 
     public void loadNpcDrops(String databaseName, String collectionName) throws NoConnectionException, InvalidDatabaseException, InvalidCollectionException, NoClientException {
         if(mongoConnection == null)
             throw new NoConnectionException();
-        mongoConnection.loadNpcDrops(databaseName, collectionName).parallelStream().forEach(npcDrop -> getDropsController().getNpcDrops().put(npcDrop.getNpcName(), npcDrop));
+        mongoConnection.loadNpcDrops(databaseName, collectionName).forEach(npcDrop -> getDropsController().addDefinition(npcDrop, false));
     }
 
-    public Map<Integer, NpcDefinition> getNpcDefinitions() {
-        return npcDefinitions;
+    public NpcDefinitionsController getNpcDefinitionsController() {
+        return npcDefinitionsController;
     }
 
     public ItemDefinitionsController getItemDefinitionsController() {

@@ -15,53 +15,66 @@
       <Text layoutX="710.0" layoutY="14.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Database name" />
       <Text layoutX="711.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Collection name" />
       <Separator layoutX="200.0" layoutY="90.0" prefHeight="7.0" prefWidth="656.0" />
-      <Label layoutX="226.0" layoutY="59.0" text="Monster name:">
+      <Label layoutX="226.0" layoutY="65.0" text="Monster name:">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label fx:id="lblMonsterName" layoutX="349.0" layoutY="59.0">
+      <Label fx:id="lblMonsterName" layoutX="349.0" layoutY="65.0">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
       <ListView fx:id="dropList" layoutX="205.0" layoutY="97.0" prefHeight="401.0" prefWidth="200.0" />
-      <Text layoutX="435.0" layoutY="293.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Amount" wrappingWidth="68.234375">
+      <Text layoutX="435.0" layoutY="410.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Amount" wrappingWidth="68.234375">
          <font>
             <Font size="16.0" />
          </font>
       </Text>
-      <TextField fx:id="txtAmount" disable="true" layoutX="604.0" layoutY="275.0" />
-      <Text layoutX="435.0" layoutY="331.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rarity" wrappingWidth="68.234375">
+      <TextField fx:id="txtAmount" disable="true" layoutX="604.0" layoutY="392.0" />
+      <Text layoutX="435.0" layoutY="448.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rarity" wrappingWidth="68.234375">
          <font>
             <Font size="16.0" />
          </font>
       </Text>
-      <ChoiceBox fx:id="choiceRarity" disable="true" layoutX="604.0" layoutY="313.0" prefHeight="25.0" prefWidth="149.0" />
-      <TextField fx:id="txtItemId" disable="true" editable="false" layoutX="604.0" layoutY="237.0" />
-      <Text layoutX="435.0" layoutY="255.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Item ID" wrappingWidth="68.234375">
+      <ChoiceBox fx:id="choiceRarity" disable="true" layoutX="604.0" layoutY="430.0" prefHeight="25.0" prefWidth="149.0" />
+      <TextField fx:id="txtItemId" disable="true" editable="false" layoutX="604.0" layoutY="354.0" />
+      <Text layoutX="435.0" layoutY="372.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Item ID" wrappingWidth="68.234375">
          <font>
             <Font size="16.0" />
          </font>
       </Text>
-      <Text layoutX="435.0" layoutY="216.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" wrappingWidth="68.234375">
+      <Text layoutX="435.0" layoutY="333.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" wrappingWidth="68.234375">
          <font>
             <Font size="16.0" />
          </font>
       </Text>
-      <TextField fx:id="txtName" disable="true" editable="false" layoutX="604.0" layoutY="198.0" />
-      <Button fx:id="btnReload" disable="true" layoutX="618.0" layoutY="383.0" mnemonicParsing="false" onAction="#reload" prefHeight="25.0" prefWidth="100.0" text="Reload" />
-      <Button fx:id="btnSaveChanges" disable="true" layoutX="491.0" layoutY="383.0" mnemonicParsing="false" onAction="#saveChanges" prefHeight="25.0" prefWidth="100.0" text="Save changes" />
-      <Button fx:id="btnAddDrop" layoutX="205.0" layoutY="500.0" mnemonicParsing="false" onAction="#addDrop" prefHeight="25.0" prefWidth="100.0" text="Add drop" />
-      <Button fx:id="btnDeleteDrop" layoutX="305.0" layoutY="500.0" mnemonicParsing="false" onAction="#deleteDrop" prefHeight="25.0" prefWidth="100.0" text="Delete drop" />
-      <Button fx:id="btnDeleteMonster" layoutX="100.0" layoutY="500.0" mnemonicParsing="false" onAction="#deleteMonster" prefHeight="25.0" prefWidth="100.0" text="Delete monster" />
+      <TextField fx:id="txtName" disable="true" editable="false" layoutX="604.0" layoutY="315.0" />
+      <Button fx:id="btnReloadItem" disable="true" layoutX="618.0" layoutY="500.0" mnemonicParsing="false" onAction="#reloadItem" prefHeight="25.0" prefWidth="100.0" text="Reload" />
+      <Button fx:id="btnSaveItemChanges" disable="true" layoutX="491.0" layoutY="500.0" mnemonicParsing="false" onAction="#saveItemChanges" prefHeight="25.0" prefWidth="100.0" text="Save changes" />
+      <Button fx:id="btnAddDrop" disable="true" layoutX="205.0" layoutY="500.0" mnemonicParsing="false" onAction="#addDrop" prefHeight="25.0" prefWidth="100.0" text="Add drop" />
+      <Button fx:id="btnDeleteDrop" disable="true" layoutX="305.0" layoutY="500.0" mnemonicParsing="false" onAction="#deleteDrop" prefHeight="25.0" prefWidth="100.0" text="Delete drop" />
+      <Button fx:id="btnDeleteMonster" disable="true" layoutX="100.0" layoutY="500.0" mnemonicParsing="false" onAction="#deleteMonster" prefHeight="25.0" prefWidth="100.0" text="Delete monster" />
       <Button fx:id="btnAddMonster" layoutY="500.0" mnemonicParsing="false" onAction="#addMonster" prefHeight="25.0" prefWidth="100.0" text="Add monster" />
-      <Separator layoutX="405.0" layoutY="179.0" prefHeight="7.0" prefWidth="451.0" />
-      <TextField fx:id="txtMonsterName" disable="true" layoutX="604.0" layoutY="121.0" />
-      <Text layoutX="435.0" layoutY="139.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Monster name" wrappingWidth="120.0">
+      <Separator layoutX="405.0" layoutY="296.0" prefHeight="7.0" prefWidth="451.0" />
+      <TextField fx:id="txtMonsterName" disable="true" layoutX="604.0" layoutY="166.0" />
+      <Text layoutX="435.0" layoutY="184.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Monster name" wrappingWidth="120.0">
          <font>
             <Font size="16.0" />
          </font>
       </Text>
+      <Button fx:id="btnSaveMonster" disable="true" layoutX="491.0" layoutY="268.0" mnemonicParsing="false" onAction="#saveMonsterChanges" prefHeight="25.0" prefWidth="100.0" text="Save changes" />
+      <Button fx:id="btnReloadDefinitions" disable="true" layoutX="618.0" layoutY="268.0" mnemonicParsing="false" onAction="#reloadDefinitions" prefHeight="25.0" prefWidth="100.0" text="Reload" />
+      <TextField fx:id="txtSearch" layoutX="206.0" layoutY="8.0" prefHeight="25.0" prefWidth="149.0" promptText="Search" />
+      <TextField fx:id="txtSearchItems" layoutX="414.0" layoutY="99.0" prefHeight="25.0" prefWidth="149.0" promptText="Search" />
+      <MenuButton layoutX="414.0" layoutY="127.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="149.0" text="Sort by">
+         <items>
+            <MenuItem mnemonicParsing="false" onAction="#sortByNameItem" text="Name" />
+            <MenuItem mnemonicParsing="false" onAction="#sortByIdItem" text="ID" />
+         </items>
+      </MenuButton>
+      <Text fx:id="lblSortTypeItems" layoutX="464.0" layoutY="144.0" mouseTransparent="true" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="RIGHT" wrappingWidth="73.224609375" />
+      <Button fx:id="btnEmulate" disable="true" layoutX="475.0" layoutY="212.0" mnemonicParsing="false" onAction="#emulate" prefHeight="45.0" prefWidth="258.0" text="Emulate" />
+      <TextField fx:id="txtSearchForDrop" layoutX="206.0" layoutY="36.0" prefHeight="25.0" prefWidth="149.0" promptText="Search for drop" />
    </children>
 </fx:root>

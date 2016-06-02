@@ -1,38 +1,38 @@
 package domain.controllers;
 
 import domain.drop.NpcDrop;
+import domain.drop.NpcDropItem;
 import javafx.beans.property.SimpleObjectProperty;
+import javafx.beans.value.ChangeListener;
 
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
+import java.util.Optional;
 
 /**
  * Created by Gilles on 30/05/2016.
  */
-public class DropsController {
-    private final Map<String, NpcDrop> npcDrops = new HashMap<>();
-    private final SimpleObjectProperty<NpcDrop> selectedDrop = new SimpleObjectProperty<>();
-    private final Set<String> changedDrops = new HashSet<>();
+public class DropsController extends DefinitionsController<String, NpcDrop> {
 
-    public Map<String, NpcDrop> getNpcDrops() {
-        return npcDrops;
+    private final SimpleObjectProperty<NpcDropItem> selectedDropItem = new SimpleObjectProperty<>();
+
+    @Override
+    protected String getKeyForDefinition(NpcDrop definition) {
+        return definition.getNpcName();
     }
 
-    public NpcDrop getSelectedDrop() {
-        return selectedDrop.get();
+    @Override
+    public Optional<NpcDrop> getDefinitionForKey(String searchKey) {
+        return getDefinitions().parallelStream().filter(npcDrop -> npcDrop.getNpcName().equalsIgnoreCase(searchKey)).findFirst();
     }
 
-    public SimpleObjectProperty<NpcDrop> selectedDropProperty() {
-        return selectedDrop;
+    public Optional<NpcDropItem> getSelectedDropItem() {
+        return Optional.of(selectedDropItem.get());
     }
 
-    public void setSelectedDrop(NpcDrop selectedDrop) {
-        this.selectedDrop.set(selectedDrop);
+    public void setSelectedDropItem(NpcDropItem selectedDefinition) {
+        this.selectedDropItem.set(selectedDefinition);
     }
 
-    public void addChangedDrop(String monsterName) {
-        changedDrops.add(monsterName);
+    public void addSelectedDropItemListener(ChangeListener<NpcDropItem> listener) {
+        selectedDropItem.addListener(listener);
     }
 }

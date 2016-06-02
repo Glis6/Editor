@@ -7,7 +7,7 @@
 
 <fx:root prefHeight="527.0" prefWidth="856.0" type="AnchorPane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <ListView fx:id="itemDefinitionsList" prefHeight="527.0" prefWidth="200.0" />
+      <ListView fx:id="itemDefinitionsList" prefHeight="498.0" prefWidth="200.0" />
       <Button fx:id="btnPull" layoutX="628.0" layoutY="53.0" mnemonicParsing="false" onAction="#pullChanges" prefHeight="25.0" prefWidth="60.0" text="Pull" />
       <TextField fx:id="txtDbName" layoutX="698.0" layoutY="17.0" promptText="Definitions" />
       <TextField fx:id="txtColName" layoutX="698.0" layoutY="60.0" promptText="item-definitions" />
@@ -18,28 +18,44 @@
       <TextField fx:id="lblName" disable="true" layoutX="352.0" layoutY="102.0" />
       <Label layoutX="223.0" layoutY="106.0" prefHeight="17.0" prefWidth="100.0" text="Name" />
       <Label layoutX="223.0" layoutY="138.0" prefHeight="17.0" prefWidth="100.0" text="Description" />
-      <CheckBox fx:id="stackable" disable="true" layoutX="223.0" layoutY="282.0" mnemonicParsing="false" text="Stackable" />
-      <CheckBox fx:id="noted" disable="true" layoutX="223.0" layoutY="308.0" mnemonicParsing="false" text="Noted" />
-      <CheckBox fx:id="twoHanded" disable="true" layoutX="309.0" layoutY="282.0" mnemonicParsing="false" text="Two Handed" />
-      <CheckBox fx:id="weapon" disable="true" layoutX="309.0" layoutY="308.0" mnemonicParsing="false" text="Weapon" />
+      <CheckBox fx:id="stackable" disable="true" layoutX="223.0" layoutY="354.0" mnemonicParsing="false" text="Stackable" />
+      <CheckBox fx:id="noted" disable="true" layoutX="223.0" layoutY="380.0" mnemonicParsing="false" text="Noted" />
+      <CheckBox fx:id="twoHanded" disable="true" layoutX="309.0" layoutY="354.0" mnemonicParsing="false" text="Two Handed" />
+      <CheckBox fx:id="weapon" disable="true" layoutX="309.0" layoutY="380.0" mnemonicParsing="false" text="Weapon" />
       <Label layoutX="223.0" layoutY="216.0" prefHeight="17.0" prefWidth="100.0" text="Type" />
       <ChoiceBox fx:id="choiceType" disable="true" layoutX="352.0" layoutY="212.0" prefHeight="25.0" prefWidth="149.0" />
       <TextField fx:id="lblValue" disable="true" editable="false" layoutX="352.0" layoutY="246.0" prefHeight="25.0" prefWidth="149.0" />
       <Label layoutX="223.0" layoutY="250.0" prefHeight="17.0" prefWidth="100.0" text="Value" />
-      <ScrollPane fx:id="requirements" layoutX="518.0" layoutY="113.0" prefHeight="407.0" prefWidth="149.0" />
-      <ScrollPane fx:id="bonusses" layoutX="672.0" layoutY="113.0" prefHeight="407.0" prefWidth="178.0" />
-      <Label layoutX="226.0" layoutY="59.0" text="Item ID: ">
+      <ScrollPane fx:id="requirements" layoutX="509.0" layoutY="113.0" prefHeight="409.0" prefWidth="158.0" />
+      <ScrollPane fx:id="bonusses" layoutX="672.0" layoutY="113.0" prefHeight="409.0" prefWidth="178.0" />
+      <Label layoutX="285.0" layoutY="65.0" text="Item ID: ">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label fx:id="lblItemId" layoutX="294.0" layoutY="59.0">
+      <Label fx:id="lblItemId" layoutX="353.0" layoutY="66.0">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Button fx:id="btnSaveChanges" disable="true" layoutX="221.0" layoutY="362.0" mnemonicParsing="false" onAction="#saveChanges" prefHeight="25.0" prefWidth="100.0" text="Save changes" />
-      <Button fx:id="btnReload" disable="true" layoutX="348.0" layoutY="362.0" mnemonicParsing="false" onAction="#reload" prefHeight="25.0" prefWidth="100.0" text="Reload" />
+      <Button fx:id="btnSaveChanges" disable="true" layoutX="242.0" layoutY="434.0" mnemonicParsing="false" onAction="#saveChanges" prefHeight="25.0" prefWidth="100.0" text="Save changes" />
+      <Button fx:id="btnReload" disable="true" layoutX="369.0" layoutY="434.0" mnemonicParsing="false" onAction="#reload" prefHeight="25.0" prefWidth="100.0" text="Reload" />
       <TextArea fx:id="lblDescription" disable="true" layoutX="353.0" layoutY="138.0" maxHeight="64.0" maxWidth="149.0" prefHeight="64.0" prefWidth="149.0" />
+      <Text layoutX="551.0" layoutY="109.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Requirements" />
+      <Text layoutX="745.0" layoutY="109.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bonus" />
+      <Button fx:id="btnAddItem" layoutY="500.0" mnemonicParsing="false" onAction="#addItem" prefHeight="25.0" prefWidth="100.0" text="Add item" />
+      <Button fx:id="btnDeleteItem" disable="true" layoutX="100.0" layoutY="500.0" mnemonicParsing="false" onAction="#deleteItem" prefHeight="25.0" prefWidth="100.0" text="Delete item" />
+      <Label layoutX="223.0" layoutY="283.0" prefHeight="17.0" prefWidth="100.0" text="Shop value" />
+      <TextField fx:id="lblShopValue" disable="true" editable="false" layoutX="352.0" layoutY="279.0" prefHeight="25.0" prefWidth="149.0" />
+      <TextField fx:id="lblAlchValue" disable="true" editable="false" layoutX="352.0" layoutY="312.0" prefHeight="25.0" prefWidth="149.0" />
+      <Label layoutX="223.0" layoutY="316.0" prefHeight="17.0" prefWidth="100.0" text="Alch value" />
+      <TextField fx:id="txtSearch" layoutX="206.0" layoutY="8.0" prefHeight="25.0" prefWidth="149.0" promptText="Search" />
+      <MenuButton layoutX="206.0" layoutY="36.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="149.0" text="Sort by">
+        <items>
+          <MenuItem mnemonicParsing="false" onAction="#sortByName" text="Name" />
+          <MenuItem mnemonicParsing="false" onAction="#sortById" text="ID" />
+        </items>
+      </MenuButton>
+      <Text fx:id="lblSortType" layoutX="256.0" layoutY="53.0" mouseTransparent="true" strokeType="OUTSIDE" strokeWidth="0.0" text="ID" textAlignment="RIGHT" wrappingWidth="73.224609375" />
    </children>
 </fx:root>

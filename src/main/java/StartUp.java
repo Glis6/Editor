@@ -18,6 +18,7 @@ public final class StartUp extends Application{
             stage.setMinWidth(stage.getWidth());
             stage.setMinHeight(stage.getHeight());
         });
+        stage.setTitle("DeviousPs editor by Glis - V1.0");
         stage.show();
     }
 
